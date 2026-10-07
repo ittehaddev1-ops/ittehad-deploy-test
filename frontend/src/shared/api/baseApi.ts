@@ -9,7 +9,7 @@ import { type AuthState, sessionCleared, sessionReceived } from '@/features/auth
 import type { TokenResponse } from '@/features/auth/authApi.generated';
 
 const rawBaseQuery = fetchBaseQuery({
-  baseUrl: import.meta.env.VITE_API_URL || '',
+  baseUrl: '',
   credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as { auth: AuthState }).auth.accessToken;

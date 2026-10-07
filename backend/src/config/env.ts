@@ -14,8 +14,7 @@ const EnvSchema = z.object({
   ACCESS_TOKEN_TTL_SEC: z.coerce.number().int().positive().default(15 * 60),
   REFRESH_TOKEN_TTL_SEC: z.coerce.number().int().positive().default(7 * 24 * 60 * 60),
   CORS_ORIGIN: z.string().default('http://localhost:5173'),
-  VITE_API_URL: z.string().default('http://localhost:4000'),
-  API_URL: z.string().default('http://localhost:4000'),
+ 
   /** Secure (HTTPS-only) refresh cookie. Defaults to on in production; set false for plain-HTTP local stacks. */
   COOKIE_SECURE: z
     .enum(['true', 'false'])

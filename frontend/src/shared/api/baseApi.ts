@@ -7,9 +7,10 @@ import {
 } from '@reduxjs/toolkit/query/react';
 import { type AuthState, sessionCleared, sessionReceived } from '@/features/auth/authSlice';
 import type { TokenResponse } from '@/features/auth/authApi.generated';
+import { env } from '../../../../backend/src/config/env'; 
 
 const rawBaseQuery = fetchBaseQuery({
-  baseUrl: '',
+  baseUrl: env.VITE_API_URL || '',
   credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as { auth: AuthState }).auth.accessToken;
